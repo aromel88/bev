@@ -4,6 +4,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
 
@@ -14,11 +15,12 @@ import { AppComponent } from './app.component';
   imports: [
     AppRoutingModule,
     BrowserModule,
-    DashboardModule.forRoot()
+    DashboardModule.forRoot(),
+    SharedModule
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
